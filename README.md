@@ -32,3 +32,5 @@ Remove all auth handlers to bypass authentication and set username as clientid i
 #### Reference 
 1) https://github.com/gorilla/websocket/tree/master/examples/chat
 
+#### Postan collection added for reference
+
