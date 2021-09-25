@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "d2f9c351-27cb-43c6-99cc-da6ef21dce3a",
+		"name": "chatroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetToken",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/token/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Rooms",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJjbGllbnRpZCI6ImFkbWluIn0.FB_CwSHQgX5TMnSzTUy4q-whHqkHZpTlInKFzoQ9xvc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create/Join Room",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJjbGllbnRpZCI6ImFkbWluIn0.FB_CwSHQgX5TMnSzTUy4q-whHqkHZpTlInKFzoQ9xvc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Connection",
+						"value": "Upgrade",
+						"type": "text"
+					},
+					{
+						"key": "Upgrade",
+						"value": "websocket",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Sec-WebSocket-Key",
+						"value": "<calculated at runtime>",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Sec-WebSocket-Version",
+						"value": "13",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Sec-WebSocket-Extensions",
+						"value": "permessage-deflate; client_max_window_bits",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/room/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List User in room",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJjbGllbnRpZCI6ImFkbWluIn0.FB_CwSHQgX5TMnSzTUy4q-whHqkHZpTlInKFzoQ9xvc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/room/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"room",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User From Room",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/room/2/rishabh",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"room",
+						"2",
+						"rishabh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Room",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/room/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
